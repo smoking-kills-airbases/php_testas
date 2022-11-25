@@ -15,9 +15,15 @@ $numbers = [
     550,
 ];
 
-function exercises1(int $number)
+
+
+function exercises1(array $numbers): int
 {
-
-    array_filter(array $array, ?callable $callback = null, int $mode = 0): array
-
+    function checkEven($number) {
+        return $number % 2 == 0;
+    }
+    $evenNum = array_filter($numbers, "checkEven");
+    return array_sum($evenNum);
 }
+
+echo exercises1($numbers);
