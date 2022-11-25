@@ -23,4 +23,4 @@ function exercises2(array $newNumbers2): int
 
     1);
 }
-var_dump(exercises2($numbers2));
+echo exercises2($numbers2);
