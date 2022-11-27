@@ -50,17 +50,24 @@ $holidays = [
 function exercises3($array)
 {
 
-    foreach ($array as $city) {
+    foreach ($array as $key => $city) {
        
+        // echo $city[$key] . PHP_EOL;
 
        if ($city['price'] == null) {
             continue;
        } else {
+
+        if ($city['destination'] == $city['destination']) {
+            echo $city['destination'] . ' and ' . $city['destination'] . PHP_EOL;
+        } else {
             echo $city['title'] . PHP_EOL;
             echo $city['destination'] . PHP_EOL;
             echo 'Price: ' . $city['price'] . PHP_EOL;
             echo 'Tourists: ' . $city['tourists'] . PHP_EOL;
             echo '========================' . PHP_EOL;
+        }
+        
        }
     }
     
