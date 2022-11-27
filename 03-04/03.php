@@ -47,16 +47,21 @@ $holidays = [
     ],
 ];
 
-function exercises3(array $holidays)
+function exercises3($array)
 {
 
-    foreach ($holidays as $key => $destination) {
-        return $destination;
-        // var_dump($destination . PHP_EOL);
-        
-        if ($key['price'] === null) {
-            unset($destination); 
-        }
+    foreach ($array as $city) {
+       
+
+       if ($city['price'] == null) {
+            continue;
+       } else {
+            echo $city['title'] . PHP_EOL;
+            echo $city['destination'] . PHP_EOL;
+            echo 'Price: ' . $city['price'] . PHP_EOL;
+            echo 'Tourists: ' . $city['tourists'] . PHP_EOL;
+            echo '========================' . PHP_EOL;
+       }
     }
     
     
