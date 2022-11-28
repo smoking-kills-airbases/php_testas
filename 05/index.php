@@ -1,28 +1,30 @@
-<?php
-/*
- 5. Sukurkite forma, kuri leistų pridėti failą ir vėliau jį išsaugotų serveryje su formoje nurodytu failo pavadinimu (name). (3 balai)
-*/
-
-//    File forma: 
-//    Name: [laboras.txt]
-//    File: [browse]
+<?php 
+include 'config.php';
 ?>
 
+<form action="upload.php" method="POST" enctype="multipart/form-data">
+    <input type="text" name="filename"><br>
+    <input type="file" name="my_file"><br>
+    <button type="submit">Upload</button>
+</form>
 
-<html>
-    <head>
-        <title>form to File</title>
-    </head>
+<div>
+    <?php 
+        $filePath = MY_DB_FILE;
+        $fileResource = fopen($filePath, 'r') or die("No such file");
 
-    <body>
+            while (!feof($fileResource)) {
+                $fileData = fgets($fileResource);
+                if ($fileData) {
+                    echo sprintf(
+                        '<li>%s <a href="%s" target="_blank">Preview</a> |
+                        <a href="download.php?path=%s">Download</a> </li>', 
+                        $fileData, $fileData, $fileData, $fileData
+                    );
+                }
+            }
+        fclose($fileResource);
+    ?>
+</div>
 
-        <form action="/action_page.php">
-            <label for="fname">File name:</label>
-            <input type="text" name="fname" value=""><br>
-            <label>Last name:</label>
-            <input type="file" name="file" value="browse"><br><br>
-            <input type="submit" value="Upload">
-        </form> 
 
-    </body>
-</html>
