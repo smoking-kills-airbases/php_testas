@@ -19,11 +19,10 @@ $numbers = [
 
 function exercises1(array $numbers): int
 {
-    function checkEven($number) {
-        return $number % 2 == 0;
-    }
     $evenNum = array_filter($numbers, "checkEven");
     return array_sum($evenNum);
 }
-
+function checkEven($number) {
+    return $number % 2 == 0;
+}
 echo exercises1($numbers);

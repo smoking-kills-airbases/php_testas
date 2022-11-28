@@ -1,5 +1,11 @@
 <?php
 
+/*
+ 4. Pakoreguokite 3 užduotį taip, kad ji duomenis rašytų ne į terminalą, o spausdintų į failą. (1 balas)
+*/
+
+
+
 $holidays = [
     [
         'title' => 'Romantic Paris',
@@ -33,11 +39,31 @@ $holidays = [
     ],
 ];
 
-/*
- 4. Pakoreguokite 3 užduotį taip, kad ji duomenis rašytų ne į terminalą, o spausdintų į failą. (1 balas)
-*/
+function exercises3($array)
+{   
+    
+    // $miestai = function($array) {
+        
+    //     foreach ($array as $city) {
+    //         if ($city['price'] == null) {
+    //              continue;
+    //         } else {
+    //              echo $city['title'] . PHP_EOL;
+    //              echo $city['destination'] . PHP_EOL;
+    //              echo 'Price: ' . $city['price'] . PHP_EOL;
+    //              echo 'Tourists: ' . $city['tourists'] . PHP_EOL;
+    //              echo '========================' . PHP_EOL;
+    //          }    
+    //     }
 
-function exercises4()
-{
+    //     $returnable = array_map()
+
+    // };
+    $callback = fn($title, $v): string => "$title: $v";
+    $result = array_map($callback, array_keys($array), array_values($array));
+
+    var_dump($result);
+   
 
 }
+var_dump(exercises3($holidays));

@@ -24,3 +24,5 @@ function exercises2(array $newNumbers2): int
     1);
 }
 echo exercises2($numbers2);
+
+//array_sum

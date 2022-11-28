@@ -34,4 +34,3 @@ echo 'Jusu skaicius: ' . $result;
 
 // $kvadratas = ($number * $number2)**2;
 // echo 'jusu skaicius: ' . $kvadratas;
-
