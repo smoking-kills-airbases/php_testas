@@ -47,28 +47,52 @@ $holidays = [
     ],
 ];
 
-function exercises3($array)
-{   
-    foreach ($array as $key => $city) {
-        if ($city['price'] == null) {
-            continue;
-        } else {
+// function exercises3($array)
+// {   
+//     foreach ($array as $key => $city) {
+//         if ($city['price'] == null) {
+//             continue;
+//         } else {
 
-            if ($city['destination'] == $city['destination']) {
-                echo $city['title'] . ', ' . $city['title'] . PHP_EOL;
-                echo $city['price'] += $city['price'] . PHP_EOL;
-                echo $city['destination'] . PHP_EOL;
-            } else {
-                echo $city['title'] . PHP_EOL;
-                echo $city['destination'] . PHP_EOL;
-                echo 'Price: ' . $city['price'] . PHP_EOL;
-                echo 'Tourists: ' . $city['tourists'] . PHP_EOL;
-                echo '========================' . PHP_EOL;
-            }
-        }    
+//             if ($city['destination'] == $city['destination']) {
+//                 echo $city['title'] . ', ' . $city['title'] . PHP_EOL;
+//                 echo $city['price'] += $city['price'] . PHP_EOL;
+//                 echo $city['destination'] . PHP_EOL;
+//             } else {
+//                 echo $city['title'] . PHP_EOL;
+//                 echo $city['destination'] . PHP_EOL;
+//                 echo 'Price: ' . $city['price'] . PHP_EOL;
+//                 echo 'Tourists: ' . $city['tourists'] . PHP_EOL;
+//                 echo '========================' . PHP_EOL;
+//             }
+//         }    
+//     }
+// }
+// var_dump(exercises3($holidays));
+
+
+function exercises3($data) {
+    $results = [];
+
+
+    foreach ($data as $item) {
+        if (isset($results[$item['destination']])) {
+            $results[$item['destination']]['title'][] = $item['title'];
+            $results[$item['price']]['sum'] += $item['price'];
+            // $results[$item['key']]['sum'] += $item['sum'];
+        } else {
+            $results[$item['destination']] = [
+                'title' => [$item['title']],
+                'destination' => $item['destination']
+            ];
+        }
     }
+
+    return $results;
+
 }
-var_dump(exercises3($holidays));
+// var_dump(exercises3($holidays));
+print_r(exercises3($holidays));
 
 
 // function exercises3($array)

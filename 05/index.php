@@ -3,7 +3,7 @@ include 'config.php';
 ?>
 
 <form action="upload.php" method="POST" enctype="multipart/form-data">
-    <input type="text" name="filename"><br>
+    <input type="text" name="name"><br>
     <input type="file" name="my_file"><br>
     <button type="submit">Upload</button>
 </form>
@@ -17,8 +17,7 @@ include 'config.php';
                 $fileData = fgets($fileResource);
                 if ($fileData) {
                     echo sprintf(
-                        '<li>%s <a href="%s" target="_blank">Preview</a> |
-                        <a href="download.php?path=%s">Download</a> </li>', 
+                        '<li>%s <a href="%s" target="_blank">Preview</a>', 
                         $fileData, $fileData, $fileData, $fileData
                     );
                 }
