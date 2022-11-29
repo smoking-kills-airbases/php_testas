@@ -47,42 +47,49 @@ $holidays = [
     ],
 ];
 
-// function exercises3($array)
-// {   
-//     foreach ($array as $city) {
-//        if ($city['price'] == null) {
-//             continue;
-//        } else {
-//             echo $city['title'] . PHP_EOL;
-//             echo $city['destination'] . PHP_EOL;
-//             echo 'Price: ' . $city['price'] . PHP_EOL;
-//             echo 'Tourists: ' . $city['tourists'] . PHP_EOL;
-//             echo '========================' . PHP_EOL;
-//         }    
-//     }
-// }
-// var_dump(exercises3($holidays));
-
-
 function exercises3($array)
 {   
-    $secondArray = [];
-    $secondArray = $array;
-
     foreach ($array as $key => $city) {
         if ($city['price'] == null) {
-            unset($city);
             continue;
         } else {
-            return $array;
+
+            if ($city['destination'] == $city['destination']) {
+                echo $city['title'] . ', ' . $city['title'] . PHP_EOL;
+                echo $city['price'] += $city['price'] . PHP_EOL;
+                echo $city['destination'] . PHP_EOL;
+            } else {
+                echo $city['title'] . PHP_EOL;
+                echo $city['destination'] . PHP_EOL;
+                echo 'Price: ' . $city['price'] . PHP_EOL;
+                echo 'Tourists: ' . $city['tourists'] . PHP_EOL;
+                echo '========================' . PHP_EOL;
+            }
         }    
     }
+}
+var_dump(exercises3($holidays));
+
+
+// function exercises3($array)
+// {   
+//     $secondArray = [];
+//     $secondArray = $array;
+
+//     foreach ($array as $key => $city) {
+//         if ($city['price'] == null) {
+//             unset($city);
+//             continue;
+//         } else {
+//             return $array;
+//         }    
+//     }
     
-    return $array;
+//     return $array;
     
    
     
-}
-var_dump(exercises3($holidays));
+// }
+// var_dump(exercises3($holidays));
 
 
