@@ -13,7 +13,9 @@ if (!is_dir('storage/www')) {
     mkdir('storage/www', 0777);
 }
 
-$fileName = $_FILES['my_file']['name'];
+// $fileName = $_FILES['my_file']['name'];
+// failo pervadinimas beveik veikia
+$fileName = $_POST['name'];
 $fileTmpPath = $_FILES['my_file']['tmp_name'];
 $fileStoragePath = sprintf('storage/www/%s', sprintf('%s_%s', uniqid(), $fileName));
 
